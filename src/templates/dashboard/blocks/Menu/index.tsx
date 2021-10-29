@@ -9,7 +9,7 @@ export type MenuProps = {
 const Menu = ({handleChange}:MenuProps) => (
   <S.Wrapper>
     <S.WrapperLinks>
-      <Logo size="Medium" />
+      <Logo size="Medium" background="None"/>
       <S.Container>
         <S.WrapperIcon onClick={handleChange}>
           <div>
@@ -38,23 +38,29 @@ const Menu = ({handleChange}:MenuProps) => (
       <S.Container>
         <S.WrapperIcon href="#">
           <div>
-            <Icon source="History" size="Small" background="None"/>
+            <Icon source="Lending" size="Small" background="None"/>
           </div>
-          <S.Span>My History</S.Span>
+          <S.Span>Lending / Borrow</S.Span>
         </S.WrapperIcon>
         <S.WrapperIcon href="#">
           <div>
-            <Icon source="Transactions" size="Small" background="None"/>
+            <Icon source="Ido" size="Small" background="None"/>
           </div>
-          <S.Span>Transactions</S.Span>
+          <S.Span>IDO</S.Span>
         </S.WrapperIcon>
       </S.Container>
       <S.Container>
         <S.WrapperIcon href="#">
           <div>
-            <Icon source="News" size="Small" background="None"/>
+            <Icon source="LiquidityPool" size="Small" background="None"/>
           </div>
-          <S.Span>Affiliates</S.Span>
+          <S.Span>Liquidity Pools</S.Span>
+        </S.WrapperIcon>
+        <S.WrapperIcon href="#">
+          <div>
+            <Icon source="Farming" size="Small" background="None"/>
+          </div>
+          <S.Span>Farms</S.Span>
         </S.WrapperIcon>
         <S.WrapperIcon href="#">
           <div>
