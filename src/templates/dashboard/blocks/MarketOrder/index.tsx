@@ -6,7 +6,7 @@ import { Tab, TabList, TabPanel,Tabs } from 'react-tabs';
 
 import * as S from './styles'
 
-const MarketOrder = () => {
+const MarketOrder = ({add}) => {
   const [state, setState] = useState("Market Order")
   const handleChange = (select: string) => setState(select)
 
@@ -28,10 +28,10 @@ const MarketOrder = () => {
         </S.Header>
 
         <TabPanel>
-          <MarketOrderAction type="Buy" />
+          <MarketOrderAction type="Buy" add={add}/>
         </TabPanel>
         <TabPanel>
-          <MarketOrderAction type="Sell" />
+          <MarketOrderAction type="Sell" add={add}/>
         </TabPanel>
       </Tabs>
     </S.Section>

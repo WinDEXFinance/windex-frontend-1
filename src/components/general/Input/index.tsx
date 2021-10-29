@@ -8,9 +8,10 @@ export type InputProps = {
   value?: number
   inputInfo?: string
   fullWidth?: boolean
+  onChange?: (e) => void
 }
 
-const Input = ({ label = 'Label', placeholder = 'Text..', type = "text", icon = "None", inputInfo, fullWidth = false }: InputProps) => {
+const Input = ({ label = 'Label', placeholder = 'Text..', type = "text", icon = "None", inputInfo, fullWidth = false, onChange = null }: InputProps) => {
 
   return (
     <S.Wrapper>
@@ -19,7 +20,7 @@ const Input = ({ label = 'Label', placeholder = 'Text..', type = "text", icon = 
             {icon !== 'None' && <img src={`/img/icons/${icon}.svg`} />} {label}
           </S.Label>
           <S.Box inputInfo={inputInfo} fullWidth={fullWidth}>
-            <S.Input placeholder={placeholder} type={type} onChange={(e) => console.log(e.target.value)}/>
+            <S.Input placeholder={placeholder} type={type} onChange={onChange}/>
             {inputInfo && <S.Span>{inputInfo}</S.Span>}
           </S.Box>
         </S.ContainerInput>

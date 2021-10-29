@@ -6,10 +6,11 @@ export type ButtonProps = {
   darkMode?: boolean
   fullWidth?: boolean
   type?: "submit" | "button"
+  click?: (action) => void
 }
 
-const Button = ({ title = "Button", size = "Medium", darkMode = true, fullWidth = false, type="button"}: ButtonProps) => (
-  <S.Wrapper type={type} size={size} darkMode={darkMode} fullWidth={fullWidth} >
+const Button = ({ title = "Button", size = "Medium", darkMode = true, fullWidth = false, click = null, type="button"}: ButtonProps) => (
+  <S.Wrapper type={type} size={size} darkMode={darkMode} fullWidth={fullWidth} onClick={click} >
     {title}
 </S.Wrapper>
 )

@@ -66,6 +66,9 @@ export default function Dashboard() {
     removeTransactionsOrder : (id: string) => {
       const removeItem = transactions.filter(item => item.id !== id)
       setTransactions(removeItem)
+    },
+    addTransactionsOrder : (transactionsOrder) => {
+      setTransactions([transactionsOrder, ...transactions]);
     }
   }
 
@@ -156,7 +159,7 @@ export default function Dashboard() {
         <Navbar currentToken={current} volume={volume} lastTradePrice={lastTradePrice} lastTradePriceType={lastTradePriceType} />
         <S.WrapperGraph marketActive={state}>
           <Graph orderBook={orderBook} latestTransaction={lastTradePrice} latestTransactionType={lastTradePriceType} graphData={graphData}/>
-          <MarketOrder />
+          <MarketOrder add={transactionActions.addTransactionsOrder}/>
           <Transactions
             newTradeData={newTrade}
             data={transactions}
